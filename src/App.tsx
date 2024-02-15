@@ -9,8 +9,8 @@ import Footer from './components/Footer/Footer';
 
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState({SelectedPage})
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Inicio)
+  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +29,9 @@ function App() {
         <Navbar 
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage} 
-        setSelectedPage={setSelectedPage}
+        selectedPage={setSelectedPage}
         />
-        <Home />
+        <Home setSelectedPage={setSelectedPage} />
         <Benefits setSelectedPage={setSelectedPage} />
         <OurClasses setSelectedPage={setSelectedPage} />
         <Contacts setSelectedPage={setSelectedPage} />
