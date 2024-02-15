@@ -15,7 +15,7 @@ const Contacts = () => {
         formState: {errors },
     } = useForm();
 
-    const onSubmit = async (e: unknown) => {
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         const isValid = await trigger();
         if (!isValid) {
             e.preventDefault();

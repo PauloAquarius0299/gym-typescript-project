@@ -1,4 +1,4 @@
-import React from 'react';
+
 import HText from '@/shared/Htext';
 import ActionButton from '@/shared/ActionButton';
 import { BenefitType, SelectedPage } from '@/shared/types';

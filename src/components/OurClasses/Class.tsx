@@ -2,7 +2,7 @@
 
 type Props = {
     name: string;
-    description: string;
+    description:  string | undefined;
     image: string;
    
 }
@@ -14,7 +14,7 @@ const Class = ({name, description, image}: Props) => {
     <li className="relative mx-5 inline-block h-[380px] w-[450px]">
         <div className={overlayStyles}>
             <p className="text-2xl">{name}</p>
-            <p className="mt-5">{description}</p>
+            {description && <p className="mt-5">{description}</p>}
         </div>
         <img src={`${image}`} alt={image} />
     </li>

@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import  {useState}  from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 import Link from './Link';
 import {SelectedPage} from '../../shared/types';
