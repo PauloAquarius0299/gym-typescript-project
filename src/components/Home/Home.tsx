@@ -1,6 +1,6 @@
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { SelectedPage } from '@/shared/types'
-import React from 'react'
+
 import ActionButton from '@/shared/ActionButton';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import home from '../../assets/home-image.png';
@@ -9,7 +9,7 @@ import logo1 from '../../assets/marca1.png';
 import logo2 from '../../assets/marca2.png';
 import logo3 from '../../assets/marca4.png';
 import logo4 from '../../assets/marca5.png';
-import heart from '../../assets/heart.png';
+
 import { motion } from 'framer-motion';
 
 

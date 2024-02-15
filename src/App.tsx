@@ -29,12 +29,12 @@ function App() {
         <Navbar 
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage} 
-        selectedPage={setSelectedPage}
+        setSelectedPage={setSelectedPage}
         />
         <Home setSelectedPage={setSelectedPage} />
         <Benefits setSelectedPage={setSelectedPage} />
         <OurClasses setSelectedPage={setSelectedPage} />
-        <Contacts setSelectedPage={setSelectedPage} />
+        <Contacts  />
         <Footer />
     </div>
   )

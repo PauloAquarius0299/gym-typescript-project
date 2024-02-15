@@ -1,15 +1,12 @@
-import React from 'react';
-import { SelectedPage } from '@/shared/types';
+
 import {useForm} from 'react-hook-form'
 import {motion} from 'framer-motion';
 import Htext from '@/shared/Htext';
 import imgC from '../../assets/contact-img.png';
 
-type Props = {
-    setSelectedPage: (value: SelectedPage) => void;
-}
 
-const Contacts = ( {setSelectedPage} : Props) => {
+
+const Contacts = () => {
     const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
 
     const {
@@ -18,7 +15,7 @@ const Contacts = ( {setSelectedPage} : Props) => {
         formState: {errors },
     } = useForm();
 
-    const onSubmit = async (e: any) => {
+    const onSubmit = async (e: unknown) => {
         const isValid = await trigger();
         if (!isValid) {
             e.preventDefault();
@@ -30,18 +27,38 @@ const Contacts = ( {setSelectedPage} : Props) => {
         <div>
 
             {/*HEADER */}
-            <div>
+            <motion.div
+            className='md:w-3/5'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{once: true, amount: 0.5}}
+            transition={{duration: 0.5}}
+            variants={{
+                hidden: {opacity: 0, x: -50},
+                visible: {opacity: 1, x:0 },
+            }}
+            >
                 <Htext>
                     <span >APROVEITE PARA ENTRAR NO <span className='text-primary-500'>SHAPE!</span></span> 
                 </Htext>
                 <p className='my-5'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus numquam beatae modi! Rem doloremque ullam maiores quaerat fugit dicta, ea sunt ipsa, quam nemo assumenda veritatis voluptatem culpa iure deserunt!
                 </p>
-            </div>
+            </motion.div>
 
             {/* FORM E IMAGEM */}
             <div className='mt-10 justify-between gap-8 md:flex'>
-                <div>
+                <motion.div
+                className="mt-10 basis-3/5 md:mt-0"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                >
                     <form action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
                     onSubmit={onSubmit}
                     target='_blank'
@@ -98,12 +115,22 @@ const Contacts = ( {setSelectedPage} : Props) => {
                             ENVIAR
                         </button>             
                     </form>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                className="relative mt-16 basis-2/5 md:-mt-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                >
                     <div className='w-full before:absolute before:bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext'>
                         <img src={imgC} alt="" className='w-[600px] mt-2 ' />
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     </section>
